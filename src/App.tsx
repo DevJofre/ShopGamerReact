@@ -1,10 +1,9 @@
-import React from 'react';
+import './App.css';
+import Rotas from './Routes';
 
 function App() {
   return (
-    <div>
-      Teste ola
-    </div>
+    <Rotas/>
   );
 }
 
