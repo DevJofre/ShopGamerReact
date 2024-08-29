@@ -5,6 +5,10 @@
   background-color: #000;
   padding: 10px 20px;
   color: white;
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .logo {
@@ -23,7 +27,7 @@
 }
 
 .search-container {
-  flex-grow: 1;
+  width: 40%;
   margin: 0 20px;
 }
 
@@ -107,4 +111,20 @@
   background-color: #f0f0f0;
   padding: 5px;
   border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 75%; /* Ajuste a largura da sidebar para ocupar a tela toda em dispositivos menores */
+  }
 }
