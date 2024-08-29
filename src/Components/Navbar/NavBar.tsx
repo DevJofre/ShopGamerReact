@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <>
             <nav className="navbar">
-                <div className="logo">droper</div>
+                <div className="logo">DroopShop</div>
                 <ul className="nav-links">
                     <li>Menus</li>
                     <li>Produtos</li>
@@ -30,8 +30,10 @@ const NavBar = () => {
 
             {isMenuOpen && (
                 <div className="sidebar">
-                    <button className="close-button" onClick={toggleMenu}>×</button>
-                    <div className="sidebar-logo">DroopShop</div>
+                    <div className="sidebar-header">
+                        <div className="sidebar-logo">DroopShop</div>
+                        <button className="close-button" onClick={toggleMenu}>×</button>
+                    </div>
                     <button className="login-button">ENTRAR</button>
                     <ul className="menu-items">
                         <li><span>🔍</span> Pesquisar</li>
