@@ -12,20 +12,25 @@ const NavBar = () => {
     return (
         <>
             <nav className="navbar">
-                <div className="logo">DroopShop</div>
-                <ul className="nav-links">
-                    <li>Menus</li>
-                    <li>Produtos</li>
-                    <li>Definições</li>
-                    <li>Feed</li>
-                </ul>
-                <div className="search-container">
-                    <input type="text" placeholder="Draper, produtos ou marcas..." />
+                <div className="left-section">
+                    <div className="logo">DroopShop</div>
+                    <ul className="nav-links">
+                        <li>Menus</li>
+                        <li>Produtos</li>
+                        <li>Definições</li>
+                        <li>Feed</li>
+                    </ul>
                 </div>
-                <div className="menu-icon" onClick={toggleMenu}>
-                    <HiMenu />
+
+                <div className="right-section">
+                    <div className="search-container">
+                        <input type="text" placeholder="Draper, produtos ou marcas..." />
+                    </div>
+                    <div className="menu-icon" onClick={toggleMenu}>
+                        <HiMenu />
+                    </div>
+                    <button className="login-button">Entrar</button>
                 </div>
-                <button className="login-button">Entrar</button>
             </nav>
 
             {isMenuOpen && (
