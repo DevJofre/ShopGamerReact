@@ -1,0 +1,81 @@
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-slide {
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 40em;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carousel-caption h2 {
+  font-size: 24px;
+}
+
+.carousel-caption p {
+  font-size: 16px;
+}
+
+.carousel-caption strong {
+  font-weight: bold;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 40px; /* Aumenta o tamanho das setas */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.next {
+  right: 20px; /* Posiciona a seta de avançar à direita */
+}
+
+.prev {
+  left: 20px; /* Posiciona a seta de voltar à esquerda */
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Muda a cor ao passar o mouse */
+  color: #ffcc00; /* Define uma cor de destaque para as setas ao hover */
+}
+
+/* Esconde as setas e ajusta o espaçamento do carrossel no topo em telas menores que 430px */
+@media (max-width: 430px) {
+  .arrow {
+    display: none;
+  }
+
+  .carousel-container {
+    margin-top: 20%; /* Afasta o carrossel 20% do topo */
+  }
+}

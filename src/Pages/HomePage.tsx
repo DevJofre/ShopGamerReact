@@ -1,9 +1,13 @@
-import NavBar from "../Components/Navbar/NavBar"
+
+import BackgroundSlider from "../Components/Slider/Slider"
 
 const HomePage = () => {
-    <>
-        <NavBar/>
-    </>
+    return(
+        <>
+            <BackgroundSlider/>
+        </>
+    )
+
 }
 
 export default HomePage

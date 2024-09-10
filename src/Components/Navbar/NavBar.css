@@ -7,6 +7,11 @@
   color: white;
   border-radius: 40px;
   margin: 10px 20px;
+  position: fixed; /* Troquei para fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Para garantir que fique acima dos outros elementos */
 }
 
 /* Estilo para a seção esquerda (logo e links) */
@@ -78,6 +83,8 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  z-index: 1000;
 }
 
 .sidebar-header {
