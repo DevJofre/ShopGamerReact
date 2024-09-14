@@ -2,165 +2,100 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
   padding: 10px 20px;
-  color: white;
-  border-radius: 40px;
-  margin: 10px 20px;
-  position: fixed; /* Troquei para fixed */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Para garantir que fique acima dos outros elementos */
+  background-color: white;
 }
-
-/* Estilo para a seção esquerda (logo e links) */
-.left-section {
+.navbar .navbar-left .navbar-logo {
+  height: 2.7em;
+}
+.navbar .navbar-center {
+  flex: 1;
   display: flex;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 30px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  cursor: pointer;
-}
-
-/* Estilo para a seção direita (barra de pesquisa, menu e login) */
-.right-section {
-  display: flex;
-  align-items: center;
-}
-
-.search-container {
-  margin-right: 20px;
-}
-
-.search-container input {
-  width: 250px;
-  max-width: 100%; /* Para garantir que não quebre em telas menores */
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
-}
-
-.login-button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-}
-
-.menu-icon {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 24px;
-  margin-right: 20px;
+}
+.navbar .navbar-center .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 5px 15px;
+  width: 60%;
+}
+.navbar .navbar-center .search-bar .search-icon {
+  font-size: 1.2rem;
+  color: #888;
+}
+.navbar .navbar-center .search-bar .search-input {
+  border: none;
+  background: transparent;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+}
+.navbar .navbar-right {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-right .navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  /* Efeito hover */
+}
+.navbar .navbar-right .navbar-menu .navbar-item {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.navbar .navbar-right .navbar-menu .navbar-item .icon {
+  font-size: 2.7rem;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Efeito suave no hover */
+}
+.navbar .navbar-right .navbar-menu .navbar-item .anunciar-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.navbar .navbar-right .navbar-menu .navbar-item:hover .icon {
+  background-color: #f0f0f0;
+  border-color: #007bff;
 }
 
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  width: 350px;
   height: 100%;
-  background-color: white;
+  width: 250px;
+  background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
   z-index: 1000;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
 }
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.sidebar-logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.close-button {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-items {
+.sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
 }
-
-.menu-items li {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-  font-size: 18px;
+.sidebar ul li {
+  padding: 10px 0;
+  font-size: 1.2rem;
   cursor: pointer;
 }
-
-.menu-items span {
-  margin-right: 10px;
-  font-size: 20px;
-}
-
-.menu-items li:hover {
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .logo {
-    display: none;
-  }
-  .nav-links {
-    display: none;
-  }
-
-  .search-container input {
-    width: auto;
-    max-width: 100%;
-  }
-
-  .sidebar {
-    width: 75%; /* Ajusta a sidebar em dispositivos menores */
-  }
-}
-
-@media (max-width: 980px) {
-  .nav-links {
-    display: none;
-  }
-
-  .search-container input {
-    width: auto;
-    max-width: 100%;
-  }
-
-  .sidebar {
-    width: 75%; /* Ajusta a sidebar em dispositivos menores */
-  }
-}
+.sidebar .close-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}/*# sourceMappingURL=NavBar.css.map */

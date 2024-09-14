@@ -1,66 +1,76 @@
-import React, { useState } from 'react';
-import { HiMenu } from "react-icons/hi";
-import './NavBar.css';
+import React, { useState } from "react";
+import { BiSearch } from "react-icons/bi";
+import { PiShoppingCartLight } from "react-icons/pi";
+import { LiaBarsSolid } from "react-icons/lia";
+import { useNavigate } from "react-router-dom"; 
+import logo from '../../Assets/Logo.png';
+import "./NavBar.scss";
 
-const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate(); 
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
-    return (
-        <>
-            <nav className="navbar">
-                <div className="left-section">
-                    <div className="logo">DroopShop</div>
-                    <ul className="nav-links">
-                        <li>Menus</li>
-                        <li>Produtos</li>
-                        <li>Definições</li>
-                        <li>Feed</li>
-                    </ul>
-                </div>
+ 
+  const goToHomePage = () => {
+    navigate("/"); 
+  };
 
-                <div className="right-section">
-                    <div className="search-container">
-                        <input type="text" placeholder="Draper, produtos ou marcas..." />
-                    </div>
-                    <div className="menu-icon" onClick={toggleMenu}>
-                        <HiMenu />
-                    </div>
-                    <button className="login-button">Entrar</button>
-                </div>
-            </nav>
+  return (
+    <>
+      <nav className="navbar">
+        <div className="navbar-left">
+          <img src={logo} alt="Logo" className="navbar-logo" />
+        </div>
 
-            {isMenuOpen && (
-                <div className="sidebar">
-                    <div className="sidebar-header">
-                        <div className="sidebar-logo">DroopShop</div>
-                        <button className="close-button" onClick={toggleMenu}>×</button>
-                    </div>
-                    <button className="login-button">ENTRAR</button>
-                    <ul className="menu-items">
-                        <li><span>🔍</span> Pesquisar</li>
-                        <hr />
-                        <li><span>🎥</span> Novidades</li>
-                        <li><span>📰</span> Feed</li>
-                        <li><span>💸</span> Cupons</li>
-                        <hr />
-                        <li><span>❓</span> Como o Droper funciona?</li>
-                        <li><span>🏬</span> Nossa loja</li>
-                        <li><span>💬</span> Fale conosco</li>
-                        <li><span>🔄</span> Trocas e devoluções</li>
-                        <li><span>📃</span> Termos de Uso</li>
-                        <li><span>🔏</span> Políticas de privacidade</li>
-                        <hr />
-                        <li><span>🌙</span> Modo escuro</li>
-                        <li><span>⚙️</span> Configurações</li>
-                    </ul>
-                </div>
-            )}
-        </>
-    );
+        <div className="logo">DroopShop</div>
+
+        <div className="navbar-center">
+          <div className="search-bar">
+            <BiSearch className="search-icon" />
+            <input
+              type="text"
+              placeholder="Anúncio, usuário ou categoria"
+              className="search-input"
+            />
+          </div>
+        </div>
+
+        <div className="navbar-right">
+          <ul className="navbar-menu">
+            <li className="navbar-item">Categorias</li>
+            <li className="navbar-item">Blog</li>
+            <li className="navbar-item">
+              <button className="anunciar-button">Anunciar</button>
+            </li>
+            <li className="navbar-item">
+              <PiShoppingCartLight className="icon" />
+            </li>
+            <li className="navbar-item" onClick={goToHomePage}>
+              <LiaBarsSolid className="icon" />
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Sidebar */}
+      {isSidebarOpen && (
+        <div className="sidebar">
+          <button className="close-sidebar" onClick={toggleSidebar}>
+            &times;
+          </button>
+          <ul>
+            <li>Entrar</li>
+            <li>Registrar</li>
+            <li>Sobre</li>
+          </ul>
+        </div>
+      )}
+    </>
+  );
 };
 
-export default NavBar;
+export default Navbar;
