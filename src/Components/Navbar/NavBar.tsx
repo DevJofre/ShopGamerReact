@@ -14,7 +14,6 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
- 
   const goToHomePage = () => {
     navigate("/"); 
   };
@@ -22,11 +21,10 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-left">
+        <div className="navbar-left" onClick={goToHomePage}>
           <img src={logo} alt="Logo" className="navbar-logo" />
+          <div className="logo">DroopShop</div>
         </div>
-
-        <div className="logo">DroopShop</div>
 
         <div className="navbar-center">
           <div className="search-bar">
@@ -47,9 +45,12 @@ const Navbar = () => {
               <button className="anunciar-button">Anunciar</button>
             </li>
             <li className="navbar-item">
+              <BiSearch className="search-icon icon" />
+            </li>
+            <li className="navbar-item">
               <PiShoppingCartLight className="icon" />
             </li>
-            <li className="navbar-item" onClick={goToHomePage}>
+            <li className="navbar-item" onClick={toggleSidebar}>
               <LiaBarsSolid className="icon" />
             </li>
           </ul>
@@ -57,18 +58,16 @@ const Navbar = () => {
       </nav>
 
       {/* Sidebar */}
-      {isSidebarOpen && (
-        <div className="sidebar">
-          <button className="close-sidebar" onClick={toggleSidebar}>
-            &times;
-          </button>
-          <ul>
-            <li>Entrar</li>
-            <li>Registrar</li>
-            <li>Sobre</li>
-          </ul>
-        </div>
-      )}
+      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <button className="close-sidebar" onClick={toggleSidebar}>
+          &times;
+        </button>
+        <ul>
+          <li>Entrar</li>
+          <li>Registrar</li>
+          <li>Sobre</li>
+        </ul>
+      </div>
     </>
   );
 };
