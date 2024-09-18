@@ -7,7 +7,7 @@ import logo from '../../Assets/Logo.png';
 import "./NavBar.scss";
 
 const Navbar = () => {
-  // Definindo estados para controle da sidebar e tamanho da tela
+  
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [screenSize, setScreenSize] = useState({
     isMobile: window.innerWidth <= 600,
@@ -17,9 +17,9 @@ const Navbar = () => {
   });
   const navigate = useNavigate();
 
-  // Função para alternar o estado da sidebar
+  
   const toggleSidebar = () => {
-    // Usando a versão funcional de setState para garantir imutabilidade
+    
     setIsSidebarOpen((prevState) => !prevState);
   };
 
@@ -27,7 +27,7 @@ const Navbar = () => {
     navigate("/");
   };
 
-  // Atualiza o estado do tamanho da tela de forma funcional e imutável
+  
   useEffect(() => {
     const handleResize = () => {
       setScreenSize((prevSize) => ({
@@ -59,7 +59,6 @@ const Navbar = () => {
           
         </div>
 
-        {/* Exibe a barra de busca em tablets e desktops */}
         {(screenSize.isTablet || screenSize.isDesktop) && (
           <div className="navbar-center">
             <div className="search-bar">
@@ -75,7 +74,7 @@ const Navbar = () => {
 
         <div className="navbar-right">
           <ul className="navbar-menu">
-            {/* Exibe apenas em telas desktop */}
+            
             {(screenSize.isTablet || screenSize.isDesktop) && (
               <>
                 <li className="navbar-item itens-text">Categorias</li>
