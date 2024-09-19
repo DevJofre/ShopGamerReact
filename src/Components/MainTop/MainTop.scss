@@ -10,7 +10,8 @@
 }
 
 .title-text{
-    
+    font-weight: 900;
+    font-size: 30px;
 }
 
 
@@ -25,4 +26,8 @@
     font-weight: 500;
     font-size: 19px;
     margin-top: 1em;
+
+    &:hover {
+        color: #35ff03;
+    }
 }
