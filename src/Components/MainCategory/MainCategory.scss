@@ -1,24 +1,30 @@
 .main-category {
     margin-top: 5em;
-
+  
     .title-main {
-        font-weight: 500;
-        font-size: 30px;
-        color: #666666;
+      font-weight: 500;
+      font-size: 30px;
+      color: #666666;
+      text-align: center;
     }
-
+  
     .category-container {
       display: flex;
-      justify-content: flex-start; 
-      flex-wrap: nowrap; 
+      justify-content: center;
+      flex-wrap: nowrap;
       gap: 20px;
-      overflow-x: auto; 
+      overflow: hidden;
       margin-top: 4em;
+      padding: 2em;
     }
   
     .category-box {
-      width: 164.63px; 
-      height: 220.08px; 
+      width: 12vw; 
+      height: 16vw; 
+      max-width: 164.63px; 
+      max-height: 220.08px; 
+      min-width: 100px; 
+      min-height: 135px; 
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,7 +33,7 @@
       border-radius: 8px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      flex-shrink: 0; 
+      flex-shrink: 0;
   
       img {
         width: 100%;
@@ -40,6 +46,57 @@
         transform: scale(1.05);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+    }
+
+    .view-all {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
+        padding: 1em 0; 
+        color: #666666; 
+        text-align: center; 
+        text-decoration: none; 
+        font-weight: bold;
+        
+        position: relative; 
+      
+        &::before,
+        &::after {
+          content: ""; 
+          flex: 1; 
+          border-top: 5px solid #dddddd; 
+          margin: 0 10px; 
+        }
+      
+        &:hover {
+            color: #007bff;
+        }
+    }
+  
+    
+    @media (max-width: 1555px) {
+      .category-box:nth-child(n+7) {
+        display: none; 
+      }
+    }
+  
+    @media (max-width: 910px) {
+      .category-box:nth-child(n+6) {
+        display: none; 
+      }
+    }
+  
+    @media (max-width: 700px) {
+      .category-box:nth-child(n+5) {
+        display: none; 
+      }
+    }
+
+    @media (max-width: 580px) {
+        .category-box:nth-child(n+4) {
+          display: none; 
+        }
     }
   }
   

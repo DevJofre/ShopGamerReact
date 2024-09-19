@@ -23,6 +23,9 @@ const MainCategory = () => {
           </Link>
         ))}
       </div>
+      <Link to="/todas-categorias" className="view-all">
+        VER TODAS CATEGORIAS
+      </Link>
     </main>
   );
 };
